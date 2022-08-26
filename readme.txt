@@ -1,2 +1,1 @@
-Git is a distributed version control system.
-Git is free software distributed unber the GPL.
+Lilac's neovim config.
