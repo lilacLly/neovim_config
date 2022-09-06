@@ -1,1 +1,3 @@
-require 'plugins'
+require('plugins')
+require('basic')
+require('colorscheme')

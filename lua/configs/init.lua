@@ -1,3 +1,7 @@
 require("configs/nvim-tree")
 require("configs/bufferline")
 require("configs/lualine")
+require("configs/nvim-treesitter")
+require("configs/mason")
+require("configs/mason-lspconfig")
+require("configs/symbols-outline")
