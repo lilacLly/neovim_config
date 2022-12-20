@@ -14,16 +14,16 @@ map("n", "<Space>", "za", opt)
 map("n", "<C-m>", ":SymbolsOutline<CR>", opt)
 
 -- BufferLine
-map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", {})
-map("n", "<Tab>", ":BufferLineCycleNext<CR>", {})
+map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<Tab>", ":BufferLineCycleNext<CR>", opt)
 
 -- Telescope
-map("n", "<Bslash>ff", ":Telescope find_files<CR>", {})
-map("n", "<Bslash>fg", ":Telescope live_grep<CR>", {})
+map("n", "<Bslash>ff", ":Telescope find_files<CR>", opt)
+map("n", "<Bslash>fg", ":Telescope live_grep<CR>", opt)
 
 -- Lsp
 local lsp_opt = {
-	buffer = bufnr,
+	-- buffer = "bufnr",
 	noremap = true,
 	silent = true,
 }
