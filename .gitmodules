@@ -1,3 +1,0 @@
-[submodule "colors/solarized8"]
-	path = colors/solarized8
-	url = git@github.com:lifepillar/vim-solarized8.git

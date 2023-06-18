@@ -7,14 +7,19 @@ local opts = {
 		end
 
 		require("keymapping").mapLSP(buf_set_keymap)
-		vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+		vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
 	end,
-    -- capabilities = capabilities,
     root_dir = nvim_lsp.util.root_pattern('.git', 'go.mod','go.work'),
-    init_options = {
-        usePlaceholders = false,
+    cmd = { "gopls" },
+    settings = {
+        gopls = {
+            completeUnimported =  true,
+            usePlaceholders = true,
+            analyses = {
+                unusedpparams = true,
+            },
+        },
     },
-	single_file_support = true,
 }
 
 return {

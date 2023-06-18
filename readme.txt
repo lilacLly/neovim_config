@@ -1,1 +1,0 @@
-Lilac's neovim config.

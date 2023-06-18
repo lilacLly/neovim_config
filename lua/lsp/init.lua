@@ -5,23 +5,31 @@ if not status then
 end
 
 local ensure_servers = {
-    "gopls", "lua-language-server"
+    "gopls", "lua_ls", "pyright",
 }
 
 mason_lspconfig.setup {
     ensure_installed = ensure_servers
 }
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 mason_lspconfig.setup_handlers {
     function (server_name)
-        require("lspconfig")[server_name].setup {}
+        require("lspconfig")[server_name].setup {
+            capabilities = capabilities
+        }
     end,
     ["gopls"] = function ()
         require("lsp/config/golang").on_setup()
     end,
-    ["sumneko_lua"] = function ()
+    ["lua_ls"] = function ()
         require("lsp/config/lua").on_setup()
     end
 }
+
+require("lsp/cmp")
+require("lsp/ui")
+require("lsp/null-ls")
 
 vim.notify("lsp setup finished.")

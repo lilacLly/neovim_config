@@ -1,4 +1,3 @@
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
 local nvim_lsp = require("lspconfig")
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
@@ -42,12 +41,12 @@ local opts = {
         -- 绑定快捷键
         require('keymapping').mapLSP(buf_set_keymap)
         -- 保存时自动格式化
-        vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+        vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.format()')
     end,
 }
 
 return {
     on_setup = function()
-        nvim_lsp.sumneko_lua.setup(opts)
+        nvim_lsp.lua_ls.setup(opts)
     end,
 }

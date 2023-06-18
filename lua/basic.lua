@@ -75,3 +75,5 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- Copilot
+vim.g.copilot_proxy = "localhost:7890"
